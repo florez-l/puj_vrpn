@@ -1,0 +1,6 @@
+
+SUBDIRS(
+  examples
+  )
+
+## eof - $RCSfile$

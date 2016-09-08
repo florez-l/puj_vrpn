@@ -31,4 +31,24 @@ IF(NOT VRPN_LIBRARY)
   MESSAGE(FATAL_ERROR "VRPN library not found!")
 ENDIF(NOT VRPN_LIBRARY)
 
+FIND_LIBRARY(
+  VRPN_QUAT_LIBRARY
+  NAMES
+  quat
+  PATHS
+  /usr/lib
+  /usr/local/lib
+  $ENV{HOME}/lib
+  $ENV{HOME}/local/lib
+  )
+IF(NOT VRPN_QUAT_LIBRARY)
+  MESSAGE(FATAL_ERROR "VRPN_QUAT (libquat.a) library not found!")
+ENDIF(NOT VRPN_QUAT_LIBRARY)
+
+SET(
+  VRPN_LIBRARIES
+  ${VRPN_LIBRARY}
+  ${VRPN_QUAT_LIBRARY}
+  )
+
 ## eof - $RCSfile$
